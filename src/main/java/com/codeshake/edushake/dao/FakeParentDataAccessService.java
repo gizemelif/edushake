@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-public class ParentDataAccessService implements ParentDao {
+@Repository("fakeDao")
+public class FakeParentDataAccessService implements ParentDao {
     private static List<Parent> DB = new ArrayList<>();
 
     @Override

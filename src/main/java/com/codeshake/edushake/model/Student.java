@@ -9,7 +9,7 @@ public class Student {
     @NotBlank
     private String name;
     private String email;
-    private Parent parent;
+    private Parent parentId;
 
     public Student(@JsonProperty("id") String id,
                    @JsonProperty("name") String name,
@@ -17,6 +17,14 @@ public class Student {
         this.id = id;
         this.name = name;
         this.email = email;
+    }
+
+    public Parent getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Parent parentId) {
+        this.parentId = parentId;
     }
 
     public String getId() {

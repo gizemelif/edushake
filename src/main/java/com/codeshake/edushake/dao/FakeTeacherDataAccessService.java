@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-public class TeacherDataAccessService implements TeacherDao {
+@Repository("fakeDao")
+public class FakeTeacherDataAccessService implements TeacherDao {
     private static List<Teacher> DB = new ArrayList<>();
 
     @Override
