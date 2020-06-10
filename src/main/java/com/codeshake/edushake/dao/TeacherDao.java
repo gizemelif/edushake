@@ -4,6 +4,7 @@ import com.codeshake.edushake.model.Teacher;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public interface TeacherDao {
 
@@ -11,5 +12,5 @@ public interface TeacherDao {
 
     List<Teacher> selectAllTeachers();
 
-    Optional<Teacher> selectTeacherById(String id);
+    Optional<Teacher> selectTeacherById(UUID id);
 }

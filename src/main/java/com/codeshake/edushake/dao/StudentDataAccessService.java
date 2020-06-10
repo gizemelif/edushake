@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository("fakeDao")
-public class FakeStudentDataAccessService implements StudentDao {
+public class StudentDataAccessService implements StudentDao {
 
     private static List<Student> DB = new ArrayList<>();
 

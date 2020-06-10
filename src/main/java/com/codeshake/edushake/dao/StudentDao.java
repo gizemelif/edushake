@@ -4,6 +4,7 @@ import com.codeshake.edushake.model.Student;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public interface StudentDao {
 
@@ -11,9 +12,9 @@ public interface StudentDao {
 
     List<Student> selectAllStudents();
 
-    Optional<Student> selectStudentById(String id);
+    Optional<Student> selectStudentById(UUID id);
 
-    int deleteStudentById(String id);
+    int deleteStudentById(UUID id);
 
-    int updateStudentById(String id, Student student);
+    int updateStudentById(UUID id, Student student);
 }

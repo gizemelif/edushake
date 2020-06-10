@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class UserService {
@@ -27,7 +28,7 @@ public class UserService {
         return userDao.selectAllUsers();
     }
 
-    public Optional<User> getUserById(String id) {
+    public Optional<User> getUserById(UUID id) {
         return userDao.selectUserById(id);
     }
 

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.UUID;
 
 @RequestMapping("source/codeshake")
 @RestController
@@ -35,18 +36,18 @@ public class StudentController {
     }
 
     @GetMapping(path = "students/{id}")
-    public Student getStudentById(@PathVariable("id") String id) {
+    public Student getStudentById(@PathVariable("id") UUID id) {
         return studentService.getStudentById(id)
                 .orElse(null);
     }
 
     @DeleteMapping(path = "students/{id}")
-    public void deleteStudentById(@PathVariable("id") String id) {
+    public void deleteStudentById(@PathVariable("id") UUID id) {
         studentService.deleteStudent(id);
     }
 
     @PutMapping(path = "students/{id}")
-    public void updateStudent(@PathVariable("id") String id, @Valid @NonNull @RequestBody Student studentToUpdate) {
+    public void updateStudent(@PathVariable("id") UUID id, @Valid @NonNull @RequestBody Student studentToUpdate) {
         studentService.updateStudentById(id, studentToUpdate);
     }
 
@@ -57,7 +58,7 @@ public class StudentController {
     public List<Teacher> getAllTeachers() { return teacherService.getAllTeachers(); }
 
     @GetMapping(path = "teachers/{id}")
-    public Teacher getTeacherById(@PathVariable("id") String id) {
+    public Teacher getTeacherById(@PathVariable("id") UUID id) {
         return teacherService.getTeacherById(id)
                 .orElse(null);
     }

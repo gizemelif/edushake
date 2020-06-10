@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class FamilyService {
@@ -27,8 +28,11 @@ public class FamilyService {
         return parentDao.selectAllParents();
     }
 
-    public Optional<Parent> getParentById(String id) {
+    public Optional<Parent> getParentById(UUID id) {
         return parentDao.selectParentById(id);
+    }
+    public Parent getParentDetailsById(UUID id) {
+        return parentDao.selectParentDetailsById(id);
     }
 
 }

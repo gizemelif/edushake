@@ -1,7 +1,9 @@
 package com.codeshake.edushake.model;
 
+import java.util.UUID;
+
 public class User {
-    private String id;
+    private UUID id;
     private String name;
     private String email;
     private String intergalacticFederationIdentification;
@@ -9,7 +11,7 @@ public class User {
 
     public User(){}
 
-    public User(String id, String name, String email, String intergalacticFederationIdentification, String role) {
+    public User(UUID id, String name, String email, String intergalacticFederationIdentification, String role) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -17,11 +19,11 @@ public class User {
         this.role = role;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

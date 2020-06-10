@@ -6,9 +6,10 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository("fakeDao")
-public class FakeParentDataAccessService implements ParentDao {
+public class ParentDataAccessService implements ParentDao {
     private static List<Parent> DB = new ArrayList<>();
 
     @Override
@@ -23,7 +24,7 @@ public class FakeParentDataAccessService implements ParentDao {
     }
 
     @Override
-    public Optional<Parent> selectParentById(String id) {
+    public Optional<Parent> selectParentById(UUID id) {
         return DB.stream()
                 .filter(parent -> parent.getId().equals(id))
                 .findFirst();

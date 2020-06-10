@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class TeacherService {
@@ -26,7 +27,7 @@ public class TeacherService {
         return teacherDao.selectAllTeachers();
     }
 
-    public Optional<Teacher> getTeacherById(String id) {
+    public Optional<Teacher> getTeacherById(UUID id) {
         return teacherDao.selectTeacherById(id);
     }
 }

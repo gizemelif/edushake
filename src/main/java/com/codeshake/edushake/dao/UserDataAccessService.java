@@ -6,9 +6,10 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository("fakeDao")
-public class FakeUserDataAccessService implements UserDao {
+public class UserDataAccessService implements UserDao {
 
     private static List<User> DB = new ArrayList<>();
 
@@ -24,7 +25,7 @@ public class FakeUserDataAccessService implements UserDao {
     }
 
     @Override
-    public Optional<User> selectUserById(String id) {
+    public Optional<User> selectUserById(UUID id) {
         return DB.stream()
                 .filter(user -> user.getId().equals(id))
                 .findFirst();

@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 @RequestMapping("codeshake/family")
 @RestController
 public class FamilyController {
@@ -20,8 +22,7 @@ public class FamilyController {
     }
 
     @GetMapping(path = "members/{id}")
-    public Parent getParentById(@PathVariable("id") String id) {
-        return familyService.getParentById(id)
-                .orElse(null);
+    public Parent getParentById(@PathVariable("id") UUID id) {
+        return familyService.getParentDetailsById(id);
     }
 }

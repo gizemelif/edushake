@@ -1,21 +1,23 @@
 package com.codeshake.edushake.model;
 
+import java.util.UUID;
+
 public class Teacher {
-    private String id;
+    private UUID id;
     private String name;
     private String email;
 
-    public Teacher(String id, String name, String email) {
+    public Teacher(UUID id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

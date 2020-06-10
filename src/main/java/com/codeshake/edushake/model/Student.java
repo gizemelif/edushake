@@ -3,15 +3,16 @@ package com.codeshake.edushake.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotBlank;
+import java.util.UUID;
 
 public class Student {
-    private String id;
+    private UUID id;
     @NotBlank
     private String name;
     private String email;
     private Parent parentId;
 
-    public Student(@JsonProperty("id") String id,
+    public Student(@JsonProperty("id") UUID id,
                    @JsonProperty("name") String name,
                    @JsonProperty("email") String email) {
         this.id = id;
@@ -27,7 +28,7 @@ public class Student {
         this.parentId = parentId;
     }
 
-    public String getId() {
+    public UUID getId() {
         return id;
     }
 

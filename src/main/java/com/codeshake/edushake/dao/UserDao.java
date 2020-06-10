@@ -4,6 +4,7 @@ import com.codeshake.edushake.model.User;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 public interface UserDao {
 
@@ -11,5 +12,5 @@ public interface UserDao {
 
     List<User> selectAllUsers();
 
-    Optional<User> selectUserById(String id);
+    Optional<User> selectUserById(UUID id);
 }
